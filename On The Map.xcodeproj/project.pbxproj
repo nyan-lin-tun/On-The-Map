@@ -14,6 +14,17 @@
 		461B50F4246839E00023F2A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 461B50F3246839E00023F2A4 /* Assets.xcassets */; };
 		461B50F7246839E00023F2A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 461B50F5246839E00023F2A4 /* LaunchScreen.storyboard */; };
 		46E483F624687AC5008C47BF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E483F524687AC5008C47BF /* LoginViewController.swift */; };
+		46E483F924687F89008C47BF /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E483F824687F89008C47BF /* UIViewControllerExtension.swift */; };
+		46E483FB2468810C008C47BF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E483FA2468810C008C47BF /* MapViewController.swift */; };
+		46E483FD24688197008C47BF /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E483FC24688197008C47BF /* LocationTableViewController.swift */; };
+		46E484012468829C008C47BF /* OnTheMapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E484002468829C008C47BF /* OnTheMapClient.swift */; };
+		46E4840324688405008C47BF /* OnTheMapNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4840224688405008C47BF /* OnTheMapNetwork.swift */; };
+		46E4840724688491008C47BF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4840624688491008C47BF /* Login.swift */; };
+		46E48409246884B9008C47BF /* LoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E48408246884B9008C47BF /* LoginCredentials.swift */; };
+		46E4840C246887D4008C47BF /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4840B246887D4008C47BF /* Account.swift */; };
+		46E4840E246887ED008C47BF /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4840D246887ED008C47BF /* Session.swift */; };
+		46E48410246887F5008C47BF /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4840F246887F5008C47BF /* LoginResponse.swift */; };
+		46E4841224688CA8008C47BF /* LoginErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4841124688CA8008C47BF /* LoginErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +37,17 @@
 		461B50F6246839E00023F2A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		461B50F8246839E00023F2A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E483F524687AC5008C47BF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		46E483F824687F89008C47BF /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		46E483FA2468810C008C47BF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		46E483FC24688197008C47BF /* LocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
+		46E484002468829C008C47BF /* OnTheMapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapClient.swift; sourceTree = "<group>"; };
+		46E4840224688405008C47BF /* OnTheMapNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapNetwork.swift; sourceTree = "<group>"; };
+		46E4840624688491008C47BF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		46E48408246884B9008C47BF /* LoginCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentials.swift; sourceTree = "<group>"; };
+		46E4840B246887D4008C47BF /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		46E4840D246887ED008C47BF /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		46E4840F246887F5008C47BF /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		46E4841124688CA8008C47BF /* LoginErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +80,12 @@
 		461B50E9246839DF0023F2A4 /* On The Map */ = {
 			isa = PBXGroup;
 			children = (
+				46E483FE24688262008C47BF /* Model */,
 				46E483F424687ABA008C47BF /* Controller */,
+				46E483F724687DB3008C47BF /* Assets */,
 				461B50EA246839DF0023F2A4 /* AppDelegate.swift */,
 				461B50EC246839DF0023F2A4 /* SceneDelegate.swift */,
 				461B50EE246839DF0023F2A4 /* ViewController.swift */,
-				461B50F0246839DF0023F2A4 /* Main.storyboard */,
-				461B50F3246839E00023F2A4 /* Assets.xcassets */,
-				461B50F5246839E00023F2A4 /* LaunchScreen.storyboard */,
 				461B50F8246839E00023F2A4 /* Info.plist */,
 			);
 			path = "On The Map";
@@ -74,8 +95,68 @@
 			isa = PBXGroup;
 			children = (
 				46E483F524687AC5008C47BF /* LoginViewController.swift */,
+				46E483F824687F89008C47BF /* UIViewControllerExtension.swift */,
+				46E483FA2468810C008C47BF /* MapViewController.swift */,
+				46E483FC24688197008C47BF /* LocationTableViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		46E483F724687DB3008C47BF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				461B50F0246839DF0023F2A4 /* Main.storyboard */,
+				461B50F3246839E00023F2A4 /* Assets.xcassets */,
+				461B50F5246839E00023F2A4 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		46E483FE24688262008C47BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46E484052468846E008C47BF /* Response */,
+				46E484042468846A008C47BF /* Requests */,
+				46E483FF24688273008C47BF /* APIConstant */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46E483FF24688273008C47BF /* APIConstant */ = {
+			isa = PBXGroup;
+			children = (
+				46E484002468829C008C47BF /* OnTheMapClient.swift */,
+				46E4840224688405008C47BF /* OnTheMapNetwork.swift */,
+			);
+			path = APIConstant;
+			sourceTree = "<group>";
+		};
+		46E484042468846A008C47BF /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				46E4840624688491008C47BF /* Login.swift */,
+				46E48408246884B9008C47BF /* LoginCredentials.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		46E484052468846E008C47BF /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				46E4840A246887BF008C47BF /* Login */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		46E4840A246887BF008C47BF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				46E4840B246887D4008C47BF /* Account.swift */,
+				46E4840D246887ED008C47BF /* Session.swift */,
+				46E4840F246887F5008C47BF /* LoginResponse.swift */,
+				46E4841124688CA8008C47BF /* LoginErrorResponse.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +231,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				46E483F624687AC5008C47BF /* LoginViewController.swift in Sources */,
+				46E4840724688491008C47BF /* Login.swift in Sources */,
+				46E4841224688CA8008C47BF /* LoginErrorResponse.swift in Sources */,
+				46E483FB2468810C008C47BF /* MapViewController.swift in Sources */,
+				46E4840324688405008C47BF /* OnTheMapNetwork.swift in Sources */,
+				46E484012468829C008C47BF /* OnTheMapClient.swift in Sources */,
+				46E4840C246887D4008C47BF /* Account.swift in Sources */,
+				46E48410246887F5008C47BF /* LoginResponse.swift in Sources */,
 				461B50EF246839DF0023F2A4 /* ViewController.swift in Sources */,
+				46E4840E246887ED008C47BF /* Session.swift in Sources */,
+				46E483F924687F89008C47BF /* UIViewControllerExtension.swift in Sources */,
 				461B50EB246839DF0023F2A4 /* AppDelegate.swift in Sources */,
 				461B50ED246839DF0023F2A4 /* SceneDelegate.swift in Sources */,
+				46E48409246884B9008C47BF /* LoginCredentials.swift in Sources */,
+				46E483FD24688197008C47BF /* LocationTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

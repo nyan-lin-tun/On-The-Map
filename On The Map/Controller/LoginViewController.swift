@@ -17,15 +17,41 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.emailTextField.text = ""
+        self.passwordTextField.text = ""
     }
     
 
     @IBAction func loginAction(_ sender: UIButton) {
-        
+        if self.emailTextField.text!.isEmpty || self.passwordTextField.text!.isEmpty {
+            self.displatAlert(title: "Error", message: "Please enter email and password to login.")
+        }else {
+            OnTheMapNetwork.login(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "" , completeion: self.handleLoginResponse(success:errorMessage:))
+        }
     }
     
     @IBAction func signUpAction(_ sender: UIButton) {
-        
+        if let url = URL(string: OnTheMapClient.Endpoints.signUp.stringValue) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    private func handleLoginResponse(success: Bool, errorMessage: String) {
+        DispatchQueue.main.async {
+            if success {
+                self.performSegue(withIdentifier: "loginComplete", sender: nil)
+            }else {
+                self.displatAlert(title: "Error", message: errorMessage)
+            }
+        }   
+    }
+    
+    func displatAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismisss", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
