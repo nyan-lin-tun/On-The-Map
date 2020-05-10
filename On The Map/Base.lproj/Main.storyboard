@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aXV-pY-UnR">
-                                <rect key="frame" x="16" y="364" width="382" height="178.5"/>
+                                <rect key="frame" x="16" y="363" width="382" height="180.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to Udacity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-G7-4Xw">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
@@ -25,23 +25,32 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LZQ-mv-v2E">
-                                        <rect key="frame" x="0.0" y="40.5" width="382" height="34"/>
+                                        <rect key="frame" x="0.0" y="40.5" width="382" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="4MY-Rc-7b4"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wmb-c5-Bsu">
-                                        <rect key="frame" x="0.0" y="94.5" width="382" height="34"/>
+                                        <rect key="frame" x="0.0" y="95.5" width="382" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="bTj-ho-Dze"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlN-Lk-esY">
-                                        <rect key="frame" x="0.0" y="148.5" width="382" height="30"/>
+                                        <rect key="frame" x="0.0" y="150.5" width="382" height="30"/>
                                         <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="en6-yb-a5n"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C6S-1V-joh">
-                                <rect key="frame" x="84.5" y="550.5" width="245.5" height="30"/>
+                                <rect key="frame" x="84.5" y="551.5" width="245.5" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSF-4u-PiL">
                                         <rect key="frame" x="0.0" y="4.5" width="183.5" height="20.5"/>
@@ -52,11 +61,14 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rt5-5M-Sfp">
                                         <rect key="frame" x="191.5" y="0.0" width="54" height="30"/>
                                         <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="signUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YRf-nv-m4o"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="R0C-A2-FUd">
-                                <rect key="frame" x="147" y="212" width="120" height="120"/>
+                                <rect key="frame" x="147" y="211" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="esa-X1-Xd9"/>
                                     <constraint firstAttribute="height" constant="120" id="nAk-86-USn"/>
@@ -77,6 +89,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="LZQ-mv-v2E" id="UJm-E1-275"/>
+                        <outlet property="passwordTextField" destination="Wmb-c5-Bsu" id="K9b-Fj-le3"/>
                         <segue destination="LhW-1W-l8B" kind="presentation" identifier="loginComplete" modalPresentationStyle="fullScreen" id="bJR-tg-24N"/>
                     </connections>
                 </viewController>
