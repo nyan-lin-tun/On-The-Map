@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,6 +55,13 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R0C-A2-FUd">
+                                <rect key="frame" x="147" y="212" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="esa-X1-Xd9"/>
+                                    <constraint firstAttribute="height" constant="120" id="nAk-86-USn"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -63,7 +70,9 @@
                             <constraint firstItem="C6S-1V-joh" firstAttribute="top" secondItem="aXV-pY-UnR" secondAttribute="bottom" constant="8" id="N7b-tV-Rsm"/>
                             <constraint firstItem="C6S-1V-joh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eJ7-KY-bYs"/>
                             <constraint firstItem="aXV-pY-UnR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="erq-k6-PUn"/>
+                            <constraint firstItem="R0C-A2-FUd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nOA-bw-VcA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aXV-pY-UnR" secondAttribute="trailing" constant="16" id="ttZ-5K-kXn"/>
+                            <constraint firstItem="aXV-pY-UnR" firstAttribute="top" secondItem="R0C-A2-FUd" secondAttribute="bottom" constant="32" id="we6-yd-hXg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
