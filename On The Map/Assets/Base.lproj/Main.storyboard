@@ -74,14 +74,24 @@
                                     <constraint firstAttribute="height" constant="120" id="nAk-86-USn"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="LqE-QR-MvR">
+                                <rect key="frame" x="194.5" y="601.5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="4W2-I4-QHx"/>
+                                    <constraint firstAttribute="height" constant="25" id="Tr0-WL-THo"/>
+                                </constraints>
+                                <color key="color" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="LqE-QR-MvR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6xR-io-jtW"/>
                             <constraint firstItem="aXV-pY-UnR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7jv-ee-HOU"/>
                             <constraint firstItem="aXV-pY-UnR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IWA-5P-YMT"/>
                             <constraint firstItem="C6S-1V-joh" firstAttribute="top" secondItem="aXV-pY-UnR" secondAttribute="bottom" constant="8" id="N7b-tV-Rsm"/>
                             <constraint firstItem="C6S-1V-joh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eJ7-KY-bYs"/>
                             <constraint firstItem="aXV-pY-UnR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="erq-k6-PUn"/>
+                            <constraint firstItem="LqE-QR-MvR" firstAttribute="top" secondItem="C6S-1V-joh" secondAttribute="bottom" constant="20" id="mTj-9N-YoG"/>
                             <constraint firstItem="R0C-A2-FUd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nOA-bw-VcA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aXV-pY-UnR" secondAttribute="trailing" constant="16" id="ttZ-5K-kXn"/>
                             <constraint firstItem="aXV-pY-UnR" firstAttribute="top" secondItem="R0C-A2-FUd" secondAttribute="bottom" constant="32" id="we6-yd-hXg"/>
@@ -89,6 +99,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="LqE-QR-MvR" id="bve-P9-gth"/>
                         <outlet property="emailTextField" destination="LZQ-mv-v2E" id="UJm-E1-275"/>
                         <outlet property="passwordTextField" destination="Wmb-c5-Bsu" id="K9b-Fj-le3"/>
                         <segue destination="LhW-1W-l8B" kind="presentation" identifier="loginComplete" modalPresentationStyle="fullScreen" id="bJR-tg-24N"/>
