@@ -28,6 +28,7 @@
 		46E48415246911B7008C47BF /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E48414246911B7008C47BF /* StudentInformation.swift */; };
 		46E48417246911D9008C47BF /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E48416246911D9008C47BF /* StudentLocation.swift */; };
 		46E4841B246921BA008C47BF /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4841A246921BA008C47BF /* LocationTableViewCell.swift */; };
+		46E4841E246926DD008C47BF /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4841D246926DD008C47BF /* LocationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		46E48414246911B7008C47BF /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		46E48416246911D9008C47BF /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		46E4841A246921BA008C47BF /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		46E4841D246926DD008C47BF /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		46E483FE24688262008C47BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				46E4841C246926D3008C47BF /* Data */,
 				46E484052468846E008C47BF /* Response */,
 				46E484042468846A008C47BF /* Requests */,
 				46E483FF24688273008C47BF /* APIConstant */,
@@ -174,6 +177,14 @@
 				46E48408246884B9008C47BF /* LoginCredentials.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		46E4841C246926D3008C47BF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				46E4841D246926DD008C47BF /* LocationModel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 				46E4840C246887D4008C47BF /* Account.swift in Sources */,
 				46E48410246887F5008C47BF /* LoginResponse.swift in Sources */,
 				461B50EF246839DF0023F2A4 /* ViewController.swift in Sources */,
+				46E4841E246926DD008C47BF /* LocationModel.swift in Sources */,
 				46E4840E246887ED008C47BF /* Session.swift in Sources */,
 				46E48417246911D9008C47BF /* StudentLocation.swift in Sources */,
 				46E4841B246921BA008C47BF /* LocationTableViewCell.swift in Sources */,

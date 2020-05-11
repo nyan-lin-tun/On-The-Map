@@ -32,7 +32,7 @@ class OnTheMapClient {
                 return ""
                 
             case .getStudentLocation:
-                return Endpoints.base + "/StudentLocation?limit=100"
+                return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
             
             }
         }

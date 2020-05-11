@@ -14,12 +14,11 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapsView: MKMapView!
     
     private var annotations = [MKPointAnnotation]()
-    private var locations = [StudentLocation]()
+//    private var locations = [StudentLocation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapsView.delegate = self
-        // Do any additional setup after loading the view.
     }
     
 
@@ -29,14 +28,14 @@ class MapViewController: UIViewController {
     
     private func getStudentsLocation() {
         annotations.removeAll()
-        OnTheMapNetwork.getStudentLocation(completeion: self.handleStudentLocationResponse(success:locations:message:))
+//        OnTheMapNetwork.getStudentLocation(completeion: self.handleStudentLocationResponse(success:message:))
+        OnTheMapNetwork.getStudentLocation(completeion: self.handleStudentLocationResponse(success:message:))
     }
     
-    private func handleStudentLocationResponse(success: Bool, locations: [StudentLocation]?, message: String) {
+    private func handleStudentLocationResponse(success: Bool, message: String) {
         
         if success {
-            self.locations = locations!
-            for location in self.locations {
+            for location in LocationModel.location {
                 let coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = coordinate

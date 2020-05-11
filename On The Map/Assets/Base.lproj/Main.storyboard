@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LhW-1W-l8B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -149,10 +149,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="NPS-G9-3GN">
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="OoY-Vh-dni"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="OoY-Vh-dni">
+                            <color key="tintColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="pOK-DC-lfH"/>
-                            <barButtonItem image="icon_refresh" id="RQa-66-TVi"/>
+                            <barButtonItem image="icon_refresh" id="RQa-66-TVi">
+                                <color key="tintColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
@@ -182,10 +186,14 @@
                         <viewLayoutGuide key="safeArea" id="Axx-aO-ioi"/>
                     </view>
                     <navigationItem key="navigationItem" id="nKz-6Q-0ev">
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="2EE-1O-pPn"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="2EE-1O-pPn">
+                            <color key="tintColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="v9y-bs-Mq8"/>
-                            <barButtonItem image="icon_refresh" id="qgi-ab-z3v"/>
+                            <barButtonItem image="icon_refresh" id="qgi-ab-z3v">
+                                <color key="tintColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>

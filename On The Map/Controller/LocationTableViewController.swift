@@ -10,9 +10,39 @@ import UIKit
 
 class LocationTableViewController: UITableViewController {
 
+    private var locations = [StudentLocation]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if LocationModel.location.isEmpty {
+            self.getStudentsLocation()
+        }else {
+            self.locations = LocationModel.location
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
+    private func getStudentsLocation() {
+        OnTheMapNetwork.getStudentLocation(completeion: self.handleGetStudentLocation(success:message:))
+    }
+    
+    private func handleGetStudentLocation(success: Bool, message: String) {
+        self.locations = LocationModel.location
+        DispatchQueue.main.async {
+            if success {
+                self.tableView.reloadData()
+            }else {
+                self.displatAlert(title: "Error", message: message)
+            }
+        }
+        
     }
 
     // MARK: - Table view data source
@@ -22,15 +52,14 @@ class LocationTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.locations.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let locationCell = tableView.dequeueReusableCell(withIdentifier: "locationTableViewCell", for: indexPath) as! LocationTableViewCell
-
-        locationCell.studentName.text = "\(indexPath.row)"
-
+        let studentName = self.locations[indexPath.row].firstName + " " + self.locations[indexPath.row].lastName
+        locationCell.studentName.text = "\(indexPath.row)" + studentName
         return locationCell
     }
     
