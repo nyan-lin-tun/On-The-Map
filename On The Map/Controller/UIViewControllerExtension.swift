@@ -11,7 +11,7 @@ import UIKit
 extension UIViewController {
     func displatAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Dismisss", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
 }
