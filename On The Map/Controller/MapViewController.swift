@@ -23,10 +23,10 @@ class MapViewController: UIViewController {
     
 
     override func viewWillAppear(_ animated: Bool) {
-        self.getStudentsLocation()
+        getStudentsLocationForMaps()
     }
     
-    private func getStudentsLocation() {
+    private func getStudentsLocationForMaps() {
         annotations.removeAll()
         OnTheMapNetwork.getStudentLocation(completeion: self.handleStudentLocationResponse(success:message:))
     }
@@ -50,6 +50,10 @@ class MapViewController: UIViewController {
                 self.displatAlert(title: "Error", message: message)
             }
         }
+    }
+    
+    @IBAction func refreshLocation(_ sender: UIBarButtonItem) {
+        self.getStudentsLocationForMaps()
     }
 }
 

@@ -60,7 +60,7 @@ class LocationTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let locationCell = tableView.dequeueReusableCell(withIdentifier: "locationTableViewCell", for: indexPath) as! LocationTableViewCell
         let studentName = self.locations[indexPath.row].firstName + " " + self.locations[indexPath.row].lastName
-        locationCell.studentName.text = "\(indexPath.row)" + studentName
+        locationCell.studentName.text = studentName
         return locationCell
     }
     
@@ -72,9 +72,12 @@ class LocationTableViewController: UITableViewController {
         if let url = URL(string: locations[index].mediaURL) {
             app.open(url, options: [:], completionHandler: nil)
         }else {
-            print("not valid")
             self.displatAlert(title: "Error", message: "URL is not valid.")
         }
+    }
+    
+    @IBAction func refreshLocation(_ sender: UIBarButtonItem) {
+        self.getStudentsLocation()
     }
 
 }

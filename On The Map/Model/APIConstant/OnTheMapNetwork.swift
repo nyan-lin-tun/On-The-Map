@@ -89,12 +89,9 @@ class OnTheMapNetwork {
             if error != nil { // Handle error
                 completion(false, "Failed to logout")
                 return
+            }else {
+                completion(true, "")
             }
-            let range = 5 ..< data!.count
-            let newData = data?.subdata(in: range)
-            print("Logout success")
-            print(String(data: newData!, encoding: .utf8)!)
-            completion(true, "")
         }
         task.resume()
     }
@@ -107,12 +104,9 @@ class OnTheMapNetwork {
                 completion(false, "Failed to get user info.")
                 return
             }else {
-                
                 let range = 5 ..< data!.count
                 let newData = data?.subdata(in: range) /* subset response data! */
-                print("User info")
                 guard let data = newData else {
-                    print("in guard else")
                     completion(false, "Failed to get user info.")
                     return
                 }
@@ -126,7 +120,27 @@ class OnTheMapNetwork {
                     completion(false, "Failed to get user info.")
                 }   
             }
+        }
+        task.resume()
+    }
+    
+    class func postStudentLocation(body: Data, completion: @escaping (Bool, String) -> Void) {
+        
+        var request = URLRequest(url: OnTheMapClient.Endpoints.postStudentLocation.url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        request.httpBody = body
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
             
+            if error != nil { // Handle error…
+                completion(false, "Error while trying to send data.")
+                return
+            }else {
+                print(String(data: data!, encoding: .utf8)!)
+                completion(true, "")
+            }
         }
         task.resume()
     }

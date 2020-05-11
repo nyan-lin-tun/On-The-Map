@@ -28,6 +28,7 @@ class OnTheMapClient {
         case logout
         
         case getStudentLocation
+        case postStudentLocation
         
         var stringValue: String {
             switch self {
@@ -46,6 +47,8 @@ class OnTheMapClient {
                 
             case .getStudentLocation:
                 return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
+            case .postStudentLocation:
+                return Endpoints.base + "/StudentLocation"
             
             }
         }

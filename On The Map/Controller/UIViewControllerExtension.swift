@@ -27,10 +27,6 @@ extension UIViewController {
         }
     }
     
-    @IBAction func refreshLocation(_ sender: UIBarButtonItem) {
-        
-    }
-    
     @IBAction func addLocation(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "toFindLocation", sender: nil)
     }
