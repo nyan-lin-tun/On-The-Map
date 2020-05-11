@@ -14,6 +14,7 @@ class LocationTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "On the Map"
 
     }
     

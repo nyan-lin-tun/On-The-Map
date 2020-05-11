@@ -52,6 +52,7 @@ class OnTheMapNetwork {
                 do {
                     let responseObject = try decoder.decode(LoginResponse.self, from: loginResponse)
                     if responseObject.account.registered {
+                        OnTheMapClient.Auth.userId = responseObject.session.id
                         completeion(true, "")
                     }else {
                         completeion(false, "")
@@ -72,7 +73,7 @@ class OnTheMapNetwork {
         task.resume()
     }
     
-    class func logout(completeion: @escaping (Bool, String) -> Void) {
+    class func logout(completion: @escaping (Bool, String) -> Void) {
         var request = URLRequest(url: OnTheMapClient.Endpoints.logout.url)
         request.httpMethod = "DELETE"
         var xsrfCookie: HTTPCookie? = nil
@@ -85,19 +86,50 @@ class OnTheMapNetwork {
         }
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
-            if error != nil { // Handle error…
-                completeion(false, "Failed to logout")
+            if error != nil { // Handle error
+                completion(false, "Failed to logout")
                 return
             }
             let range = 5 ..< data!.count
-            let newData = data?.subdata(in: range) /* subset response data! */
+            let newData = data?.subdata(in: range)
             print("Logout success")
             print(String(data: newData!, encoding: .utf8)!)
-            completeion(true, "")
+            completion(true, "")
         }
         task.resume()
     }
     
+    class func getUserInfo(completion: @escaping (Bool, String) -> Void) {
+        let request = URLRequest(url: OnTheMapClient.Endpoints.getUserInfo.url)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            if error != nil { // Handle error...
+                completion(false, "Failed to get user info.")
+                return
+            }else {
+                
+                let range = 5 ..< data!.count
+                let newData = data?.subdata(in: range) /* subset response data! */
+                print("User info")
+                guard let data = newData else {
+                    print("in guard else")
+                    completion(false, "Failed to get user info.")
+                    return
+                }
+                let decoder = JSONDecoder()
+                do {
+                    let userInfo = try decoder.decode(UserInfoResponse.self, from: data)
+                    OnTheMapClient.UserInfo.firstName = userInfo.firstName
+                    OnTheMapClient.UserInfo.lastName = userInfo.lastName
+                    completion(true, "")
+                } catch {
+                    completion(false, "Failed to get user info.")
+                }   
+            }
+            
+        }
+        task.resume()
+    }
 }
 
 

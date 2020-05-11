@@ -18,6 +18,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "On the Map"
         self.mapsView.delegate = self
     }
     

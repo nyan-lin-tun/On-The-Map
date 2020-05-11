@@ -29,6 +29,7 @@
 		46E48417246911D9008C47BF /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E48416246911D9008C47BF /* StudentLocation.swift */; };
 		46E4841B246921BA008C47BF /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4841A246921BA008C47BF /* LocationTableViewCell.swift */; };
 		46E4841E246926DD008C47BF /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4841D246926DD008C47BF /* LocationModel.swift */; };
+		46E4842024696570008C47BF /* UserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4841F24696570008C47BF /* UserInfoResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		46E48416246911D9008C47BF /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		46E4841A246921BA008C47BF /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		46E4841D246926DD008C47BF /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		46E4841F24696570008C47BF /* UserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		46E484052468846E008C47BF /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				46E484212469657B008C47BF /* StudentInfo */,
 				46E4840A246887BF008C47BF /* Login */,
 				46E48414246911B7008C47BF /* StudentInformation.swift */,
 				46E48416246911D9008C47BF /* StudentLocation.swift */,
@@ -185,6 +188,14 @@
 				46E4841D246926DD008C47BF /* LocationModel.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		46E484212469657B008C47BF /* StudentInfo */ = {
+			isa = PBXGroup;
+			children = (
+				46E4841F24696570008C47BF /* UserInfoResponse.swift */,
+			);
+			path = StudentInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 				461B50ED246839DF0023F2A4 /* SceneDelegate.swift in Sources */,
 				46E48409246884B9008C47BF /* LoginCredentials.swift in Sources */,
 				46E483FD24688197008C47BF /* LocationTableViewController.swift in Sources */,
+				46E4842024696570008C47BF /* UserInfoResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

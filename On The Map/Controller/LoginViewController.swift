@@ -40,13 +40,24 @@ class LoginViewController: UIViewController {
     }
     
     private func handleLoginResponse(success: Bool, errorMessage: String) {
+        if success {
+            OnTheMapNetwork.getUserInfo(completion: self.handleGetUserInfoResponse(success:errorMessage:))
+        }else {
+            DispatchQueue.main.async {
+                self.displatAlert(title: "Error", message: errorMessage)
+            }
+        }
+    }
+    
+    private func handleGetUserInfoResponse(success: Bool, errorMessage: String) {
         DispatchQueue.main.async {
             if success {
                 self.performSegue(withIdentifier: "loginComplete", sender: nil)
             }else {
                 self.displatAlert(title: "Error", message: errorMessage)
             }
-        }   
+        }
+        
     }
     
     

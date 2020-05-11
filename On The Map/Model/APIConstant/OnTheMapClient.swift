@@ -10,10 +10,20 @@ import Foundation
 
 class OnTheMapClient {
     
+    struct Auth {
+        static var userId = ""
+    }
+    
+    struct UserInfo {
+        static var firstName = ""
+        static var lastName = ""
+    }
+    
     enum Endpoints {
         static let base = "https://onthemap-api.udacity.com/v1"
         
         case login
+        case getUserInfo
         case signUp
         case logout
         
@@ -24,6 +34,9 @@ class OnTheMapClient {
             
             case .login:
                 return Endpoints.base + "/session"
+                
+            case .getUserInfo:
+                return Endpoints.base + "/users/\(Auth.userId)"
             
             case .signUp:
                 return "https://auth.udacity.com/sign-up"
