@@ -145,14 +145,3 @@ class OnTheMapNetwork {
         task.resume()
     }
 }
-
-
-func testJSON(data: Data) {
-    do {
-        let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-        print(json)
-    }catch  {
-        print("JSON parsing failed")
-        print(error)
-    }
-}
