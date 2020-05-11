@@ -98,45 +98,72 @@
             </objects>
             <point key="canvasLocation" x="-780" y="-113"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="aqj-Ga-pDx">
+        <!--Location Table View Controller-->
+        <scene sceneID="SnB-68-aMz">
             <objects>
-                <viewController id="7wt-tI-DGj" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="N7O-qF-Y1P">
+                <tableViewController id="6GG-TY-97U" customClass="LocationTableViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QWZ-1C-2Ap">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="apj-8z-NHn"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="hOE-Pn-TsU">
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="kkd-XF-moq"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="ihD-l2-nWj">
+                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ihD-l2-nWj" id="wU5-Oe-WGf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6GG-TY-97U" id="vcw-ds-3jq"/>
+                            <outlet property="delegate" destination="6GG-TY-97U" id="8pS-SW-wkj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="NPS-G9-3GN">
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="OoY-Vh-dni"/>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" id="zHz-SZ-Zwb"/>
-                            <barButtonItem title="Item" id="RHJ-Rd-siP"/>
+                            <barButtonItem systemItem="add" id="pOK-DC-lfH"/>
+                            <barButtonItem systemItem="refresh" id="RQa-66-TVi"/>
                         </rightBarButtonItems>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WEr-t5-rhJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LeF-J4-z8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004.3478260869567" y="210.9375"/>
+            <point key="canvasLocation" x="2002.8985507246377" y="210.9375"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="vMA-G8-MeE">
             <objects>
-                <viewController id="EDg-FR-OkO" sceneMemberID="viewController">
+                <viewController id="EDg-FR-OkO" customClass="MapViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NOa-dD-vJ8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ldv-BA-mTY">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ldv-BA-mTY" firstAttribute="leading" secondItem="Axx-aO-ioi" secondAttribute="leading" id="BTE-C1-WJ8"/>
+                            <constraint firstItem="Ldv-BA-mTY" firstAttribute="bottom" secondItem="Axx-aO-ioi" secondAttribute="bottom" id="LK8-sb-iAg"/>
+                            <constraint firstItem="Ldv-BA-mTY" firstAttribute="top" secondItem="Axx-aO-ioi" secondAttribute="top" id="M9P-bS-G1T"/>
+                            <constraint firstItem="Ldv-BA-mTY" firstAttribute="trailing" secondItem="Axx-aO-ioi" secondAttribute="trailing" id="Tqh-ia-oPL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Axx-aO-ioi"/>
                     </view>
                     <navigationItem key="navigationItem" id="nKz-6Q-0ev">
                         <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="2EE-1O-pPn"/>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" id="v9y-bs-Mq8"/>
-                            <barButtonItem title="Item" id="qgi-ab-z3v"/>
+                            <barButtonItem systemItem="add" id="v9y-bs-Mq8"/>
+                            <barButtonItem systemItem="refresh" id="qgi-ab-z3v"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapsView" destination="Ldv-BA-mTY" id="hKk-Pb-1NO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kr3-L5-D0q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,11 +188,11 @@
             </objects>
             <point key="canvasLocation" x="177" y="-112"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="Qdi-Uj-Enk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Reh-98-few" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="EIv-xD-4Ct"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-selected" selectedImage="icon_mapview-deselected" id="EIv-xD-4Ct"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nor-dH-FPV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -180,11 +207,11 @@
             </objects>
             <point key="canvasLocation" x="1094.2028985507247" y="-437.27678571428572"/>
         </scene>
-        <!--Item 2-->
+        <!--Navigation Controller-->
         <scene sceneID="KeV-kH-c4T">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ONj-HY-fwe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Q4j-eV-L4W"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="Q4j-eV-L4W"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qcf-0H-kOw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -192,7 +219,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7wt-tI-DGj" kind="relationship" relationship="rootViewController" id="p1m-rF-xPz"/>
+                        <segue destination="6GG-TY-97U" kind="relationship" relationship="rootViewController" id="bkQ-GR-VR5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PAq-v0-cNa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -201,6 +228,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_listview-deselected" width="75" height="50"/>
+        <image name="icon_listview-selected" width="75" height="50"/>
+        <image name="icon_mapview-deselected" width="75" height="50"/>
+        <image name="icon_mapview-selected" width="75" height="50"/>
         <image name="logo-u" width="62" height="62"/>
     </resources>
 </document>

@@ -10,6 +10,26 @@ import Foundation
 
 class OnTheMapNetwork {
     
+    class func getStudentLocation(completeion: @escaping (Bool, [StudentLocation]?, String) -> Void) {
+        let task = URLSession.shared.dataTask(with: OnTheMapClient.Endpoints.getStudentLocation.url) { (data, response, error) in
+            if error == nil {
+                guard let data = data else {
+                    completeion(false, [StudentLocation](), "Error while trying to user data.")
+                    return
+                }
+                let decoder = JSONDecoder()
+                do {
+                    let json = try decoder.decode(StudentInformation.self, from: data)
+                    completeion(true, json.results, "")
+                }catch {
+                    completeion(false, [StudentLocation](), error.localizedDescription)
+                }
+            }else {
+                completeion(false, [StudentLocation](), "Failed to connect server")
+            }
+        }
+        task.resume()
+    }
     
     class func login(email: String,
                      password: String,
@@ -50,6 +70,8 @@ class OnTheMapNetwork {
         }
         task.resume()
     }
+    
+    
 }
 
 

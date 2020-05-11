@@ -25,6 +25,8 @@
 		46E4840E246887ED008C47BF /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4840D246887ED008C47BF /* Session.swift */; };
 		46E48410246887F5008C47BF /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4840F246887F5008C47BF /* LoginResponse.swift */; };
 		46E4841224688CA8008C47BF /* LoginErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4841124688CA8008C47BF /* LoginErrorResponse.swift */; };
+		46E48415246911B7008C47BF /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E48414246911B7008C47BF /* StudentInformation.swift */; };
+		46E48417246911D9008C47BF /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E48416246911D9008C47BF /* StudentLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		46E4840D246887ED008C47BF /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		46E4840F246887F5008C47BF /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		46E4841124688CA8008C47BF /* LoginErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorResponse.swift; sourceTree = "<group>"; };
+		46E48414246911B7008C47BF /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
+		46E48416246911D9008C47BF /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +138,7 @@
 		46E484042468846A008C47BF /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				46E4840624688491008C47BF /* Login.swift */,
-				46E48408246884B9008C47BF /* LoginCredentials.swift */,
+				46E484132469119D008C47BF /* Login */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -144,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				46E4840A246887BF008C47BF /* Login */,
+				46E48414246911B7008C47BF /* StudentInformation.swift */,
+				46E48416246911D9008C47BF /* StudentLocation.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -155,6 +160,15 @@
 				46E4840D246887ED008C47BF /* Session.swift */,
 				46E4840F246887F5008C47BF /* LoginResponse.swift */,
 				46E4841124688CA8008C47BF /* LoginErrorResponse.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		46E484132469119D008C47BF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				46E4840624688491008C47BF /* Login.swift */,
+				46E48408246884B9008C47BF /* LoginCredentials.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -234,12 +248,14 @@
 				46E4840724688491008C47BF /* Login.swift in Sources */,
 				46E4841224688CA8008C47BF /* LoginErrorResponse.swift in Sources */,
 				46E483FB2468810C008C47BF /* MapViewController.swift in Sources */,
+				46E48415246911B7008C47BF /* StudentInformation.swift in Sources */,
 				46E4840324688405008C47BF /* OnTheMapNetwork.swift in Sources */,
 				46E484012468829C008C47BF /* OnTheMapClient.swift in Sources */,
 				46E4840C246887D4008C47BF /* Account.swift in Sources */,
 				46E48410246887F5008C47BF /* LoginResponse.swift in Sources */,
 				461B50EF246839DF0023F2A4 /* ViewController.swift in Sources */,
 				46E4840E246887ED008C47BF /* Session.swift in Sources */,
+				46E48417246911D9008C47BF /* StudentLocation.swift in Sources */,
 				46E483F924687F89008C47BF /* UIViewControllerExtension.swift in Sources */,
 				461B50EB246839DF0023F2A4 /* AppDelegate.swift in Sources */,
 				461B50ED246839DF0023F2A4 /* SceneDelegate.swift in Sources */,
