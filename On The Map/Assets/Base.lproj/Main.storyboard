@@ -170,6 +170,9 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <segue destination="n4v-h2-lP3" kind="presentation" identifier="toFindLocation" modalPresentationStyle="fullScreen" id="IFb-dj-3f5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LeF-J4-z8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -220,17 +223,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapsView" destination="Ldv-BA-mTY" id="hKk-Pb-1NO"/>
-                        <segue destination="n4v-h2-lP3" kind="presentation" modalPresentationStyle="fullScreen" id="bjY-90-gzm"/>
+                        <segue destination="n4v-h2-lP3" kind="presentation" identifier="toFindLocation" modalPresentationStyle="fullScreen" id="bjY-90-gzm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kr3-L5-D0q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2004.3478260869567" y="-437.27678571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Find Location View Controller-->
         <scene sceneID="1lK-p0-98b">
             <objects>
-                <viewController id="InA-JY-vcn" sceneMemberID="viewController">
+                <viewController id="InA-JY-vcn" customClass="FindLocationViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tjw-eH-e95">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,6 +258,9 @@
                                         <state key="normal" title="Find Location">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="findButton:" destination="InA-JY-vcn" eventType="touchUpInside" id="I4D-Fn-7qF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -265,13 +271,23 @@
                                     <constraint firstAttribute="width" constant="60" id="QGf-ED-iOU"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="d9g-3i-Weg">
+                                <rect key="frame" x="194.5" y="563" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="3Vv-D4-G5C"/>
+                                    <constraint firstAttribute="height" constant="25" id="NbA-9H-glV"/>
+                                </constraints>
+                                <color key="color" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="zoO-8n-FDd" firstAttribute="centerX" secondItem="tfr-9a-mzR" secondAttribute="centerX" id="7Ug-v5-KBq"/>
                             <constraint firstItem="zoO-8n-FDd" firstAttribute="leading" secondItem="tfr-9a-mzR" secondAttribute="leading" constant="8" id="D4j-UG-X0L"/>
+                            <constraint firstItem="d9g-3i-Weg" firstAttribute="centerX" secondItem="tfr-9a-mzR" secondAttribute="centerX" id="Dr5-lX-sSd"/>
                             <constraint firstItem="zoO-8n-FDd" firstAttribute="top" secondItem="svX-ZT-y2M" secondAttribute="bottom" constant="82" id="FEI-dj-vSj"/>
                             <constraint firstItem="svX-ZT-y2M" firstAttribute="centerX" secondItem="tfr-9a-mzR" secondAttribute="centerX" id="OUC-jM-Mpe"/>
+                            <constraint firstItem="d9g-3i-Weg" firstAttribute="top" secondItem="zoO-8n-FDd" secondAttribute="bottom" constant="25" id="hEx-0u-ZKE"/>
                             <constraint firstItem="zoO-8n-FDd" firstAttribute="centerY" secondItem="tfr-9a-mzR" secondAttribute="centerY" id="nyI-dh-T0k"/>
                             <constraint firstItem="tfr-9a-mzR" firstAttribute="trailing" secondItem="zoO-8n-FDd" secondAttribute="trailing" constant="8" id="ofc-Jf-aC9"/>
                         </constraints>
@@ -280,12 +296,37 @@
                     <navigationItem key="navigationItem" id="b0O-qv-bqc">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9i3-KA-AeL">
                             <color key="tintColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cancelAction:" destination="InA-JY-vcn" id="IGD-8u-gQ2"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="d9g-3i-Weg" id="IJQ-nr-bbc"/>
+                        <outlet property="locationTextField" destination="swF-3w-Ylu" id="oWU-wR-pEG"/>
+                        <outlet property="urlTextField" destination="FfX-gQ-IZ1" id="1nD-yy-6lU"/>
+                        <segue destination="FPe-F7-tp3" kind="show" identifier="toAddLocation" id="xEx-up-EhK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxH-af-aZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3962" y="-133"/>
+            <point key="canvasLocation" x="3996" y="-133"/>
+        </scene>
+        <!--Add Location View Controller-->
+        <scene sceneID="pAC-DA-e4j">
+            <objects>
+                <viewController id="FPe-F7-tp3" customClass="AddLocationViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yn3-cU-Dne">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="FIv-nB-EF8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fgm-XL-AON"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Awk-S3-cWp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4819" y="-133"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Uyq-eD-bWb">
@@ -368,6 +409,9 @@
             <point key="canvasLocation" x="3101.449275362319" y="-132.58928571428572"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="IFb-dj-3f5"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_addpin" width="24" height="24"/>
         <image name="icon_listview-deselected" width="75" height="50"/>

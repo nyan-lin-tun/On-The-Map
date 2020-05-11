@@ -32,7 +32,8 @@ extension UIViewController {
     }
     
     @IBAction func addLocation(_ sender: UIBarButtonItem) {
-        
+        self.performSegue(withIdentifier: "toFindLocation", sender: nil)
     }
+    
 }
 

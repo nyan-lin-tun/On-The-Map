@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  StudentLocationRequest.swift
 //  On The Map
 //
 //  Created by Nyan Lin Tun on 11/05/2020.
@@ -8,18 +8,14 @@
 
 import Foundation
 
-struct StudentLocation: Codable {
+struct StudentLocationRequest: Codable {
     
+    var uniqueKey: String
     var firstName: String
     var lastName: String
-    var longitude: Double
-    var latitude: Double
     var mapString: String
     var mediaURL: String
-    var uniqueKey: String
-    var objectId: String
-    var createdAt: String
-    var updatedAt: String
+    var latitude: Double
+    var longitude: Double
     
 }
-
