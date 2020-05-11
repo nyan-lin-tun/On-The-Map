@@ -151,13 +151,22 @@
                     <navigationItem key="navigationItem" id="NPS-G9-3GN">
                         <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="OoY-Vh-dni">
                             <color key="tintColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="logoutAction:" destination="6GG-TY-97U" id="Ca8-JE-9Xo"/>
+                            </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="pOK-DC-lfH">
                                 <color key="tintColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="addLocation:" destination="6GG-TY-97U" id="qK1-dU-Ak1"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="icon_refresh" id="RQa-66-TVi">
                                 <color key="tintColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="refreshLocation:" destination="6GG-TY-97U" id="Y4q-hv-P0W"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -190,13 +199,22 @@
                     <navigationItem key="navigationItem" id="nKz-6Q-0ev">
                         <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="2EE-1O-pPn">
                             <color key="tintColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="logoutAction:" destination="EDg-FR-OkO" id="JOt-Ec-Xl3"/>
+                            </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="v9y-bs-Mq8">
                                 <color key="tintColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="addLocation:" destination="EDg-FR-OkO" id="58v-4s-STF"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="icon_refresh" id="qgi-ab-z3v">
                                 <color key="tintColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="refreshLocation:" destination="EDg-FR-OkO" id="qHk-SM-iyu"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>

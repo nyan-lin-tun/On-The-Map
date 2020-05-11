@@ -29,7 +29,7 @@ class OnTheMapClient {
                 return "https://auth.udacity.com/sign-up"
                 
             case .logout:
-                return ""
+                return Endpoints.base + "/session"
                 
             case .getStudentLocation:
                 return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"

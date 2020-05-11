@@ -72,6 +72,31 @@ class OnTheMapNetwork {
         task.resume()
     }
     
+    class func logout(completeion: @escaping (Bool, String) -> Void) {
+        var request = URLRequest(url: OnTheMapClient.Endpoints.logout.url)
+        request.httpMethod = "DELETE"
+        var xsrfCookie: HTTPCookie? = nil
+        let sharedCookieStorage = HTTPCookieStorage.shared
+        for cookie in sharedCookieStorage.cookies! {
+            if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+        }
+        if let xsrfCookie = xsrfCookie {
+          request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+        }
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            if error != nil { // Handle error…
+                completeion(false, "Failed to logout")
+                return
+            }
+            let range = 5 ..< data!.count
+            let newData = data?.subdata(in: range) /* subset response data! */
+            print("Logout success")
+            print(String(data: newData!, encoding: .utf8)!)
+            completeion(true, "")
+        }
+        task.resume()
+    }
     
 }
 

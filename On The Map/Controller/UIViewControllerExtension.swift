@@ -14,4 +14,25 @@ extension UIViewController {
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    @IBAction func logoutAction(_ sender: UIBarButtonItem) {
+        OnTheMapNetwork.logout { (success, message) in
+            DispatchQueue.main.async {
+                if success {
+                    self.dismiss(animated: true, completion: nil)
+                }else {
+                    self.displatAlert(title: "Error", message: message)
+                }
+            }
+        }
+    }
+    
+    @IBAction func refreshLocation(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    @IBAction func addLocation(_ sender: UIBarButtonItem) {
+        
+    }
 }
+

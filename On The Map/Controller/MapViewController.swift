@@ -51,8 +51,6 @@ class MapViewController: UIViewController {
                 self.displatAlert(title: "Error", message: message)
             }
         }
-        
-        
     }
 }
 
