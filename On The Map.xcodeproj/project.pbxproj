@@ -27,6 +27,7 @@
 		46E4841224688CA8008C47BF /* LoginErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4841124688CA8008C47BF /* LoginErrorResponse.swift */; };
 		46E48415246911B7008C47BF /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E48414246911B7008C47BF /* StudentInformation.swift */; };
 		46E48417246911D9008C47BF /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E48416246911D9008C47BF /* StudentLocation.swift */; };
+		46E4841B246921BA008C47BF /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4841A246921BA008C47BF /* LocationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		46E4841124688CA8008C47BF /* LoginErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorResponse.swift; sourceTree = "<group>"; };
 		46E48414246911B7008C47BF /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		46E48416246911D9008C47BF /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
+		46E4841A246921BA008C47BF /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				46E483F824687F89008C47BF /* UIViewControllerExtension.swift */,
 				46E483FA2468810C008C47BF /* MapViewController.swift */,
 				46E483FC24688197008C47BF /* LocationTableViewController.swift */,
+				46E4841A246921BA008C47BF /* LocationTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				461B50EF246839DF0023F2A4 /* ViewController.swift in Sources */,
 				46E4840E246887ED008C47BF /* Session.swift in Sources */,
 				46E48417246911D9008C47BF /* StudentLocation.swift in Sources */,
+				46E4841B246921BA008C47BF /* LocationTableViewCell.swift in Sources */,
 				46E483F924687F89008C47BF /* UIViewControllerExtension.swift in Sources */,
 				461B50EB246839DF0023F2A4 /* AppDelegate.swift in Sources */,
 				461B50ED246839DF0023F2A4 /* SceneDelegate.swift in Sources */,

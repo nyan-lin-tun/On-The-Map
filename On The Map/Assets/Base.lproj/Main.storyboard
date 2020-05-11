@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LhW-1W-l8B">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -107,13 +107,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="ihD-l2-nWj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationTableViewCell" rowHeight="80" id="ihD-l2-nWj" customClass="LocationTableViewCell" customModule="On_The_Map" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ihD-l2-nWj" id="wU5-Oe-WGf">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_pin" translatesAutoresizingMaskIntoConstraints="NO" id="NwP-im-g6e">
+                                            <rect key="frame" x="8" y="8" width="70" height="64"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" priority="999" constant="64" id="ogA-V1-cnj"/>
+                                                <constraint firstAttribute="width" constant="70" id="r8h-IH-7xC"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqS-X8-oYa">
+                                            <rect key="frame" x="86" y="29.5" width="320" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="NwP-im-g6e" firstAttribute="leading" secondItem="wU5-Oe-WGf" secondAttribute="leading" constant="8" id="4Ai-5k-Axo"/>
+                                        <constraint firstItem="NwP-im-g6e" firstAttribute="centerY" secondItem="wU5-Oe-WGf" secondAttribute="centerY" id="5yR-tw-Gf3"/>
+                                        <constraint firstAttribute="trailing" secondItem="LqS-X8-oYa" secondAttribute="trailing" constant="8" id="FKX-5N-gC2"/>
+                                        <constraint firstAttribute="bottom" secondItem="NwP-im-g6e" secondAttribute="bottom" constant="8" id="I2i-QF-AvP"/>
+                                        <constraint firstItem="LqS-X8-oYa" firstAttribute="leading" secondItem="NwP-im-g6e" secondAttribute="trailing" constant="8" id="TQZ-eL-ga6"/>
+                                        <constraint firstItem="LqS-X8-oYa" firstAttribute="centerY" secondItem="NwP-im-g6e" secondAttribute="centerY" id="Tyr-eh-Dyi"/>
+                                        <constraint firstItem="NwP-im-g6e" firstAttribute="top" secondItem="wU5-Oe-WGf" secondAttribute="top" constant="8" id="eBi-xn-zZk"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="studentName" destination="LqS-X8-oYa" id="z6a-KC-BHW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -124,8 +151,8 @@
                     <navigationItem key="navigationItem" id="NPS-G9-3GN">
                         <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="OoY-Vh-dni"/>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="pOK-DC-lfH"/>
-                            <barButtonItem systemItem="refresh" id="RQa-66-TVi"/>
+                            <barButtonItem image="icon_addpin" id="pOK-DC-lfH"/>
+                            <barButtonItem image="icon_refresh" id="RQa-66-TVi"/>
                         </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
@@ -157,8 +184,8 @@
                     <navigationItem key="navigationItem" id="nKz-6Q-0ev">
                         <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="2EE-1O-pPn"/>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="v9y-bs-Mq8"/>
-                            <barButtonItem systemItem="refresh" id="qgi-ab-z3v"/>
+                            <barButtonItem image="icon_addpin" id="v9y-bs-Mq8"/>
+                            <barButtonItem image="icon_refresh" id="qgi-ab-z3v"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -192,7 +219,9 @@
         <scene sceneID="Qdi-Uj-Enk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Reh-98-few" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-selected" selectedImage="icon_mapview-deselected" id="EIv-xD-4Ct"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-selected" selectedImage="icon_mapview-selected" id="EIv-xD-4Ct">
+                        <color key="badgeColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nor-dH-FPV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -211,7 +240,9 @@
         <scene sceneID="KeV-kH-c4T">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ONj-HY-fwe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="Q4j-eV-L4W"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-deselected" id="Q4j-eV-L4W">
+                        <color key="badgeColor" red="0.0039215686269999999" green="0.83137254900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qcf-0H-kOw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -228,10 +259,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_addpin" width="24" height="24"/>
         <image name="icon_listview-deselected" width="75" height="50"/>
-        <image name="icon_listview-selected" width="75" height="50"/>
-        <image name="icon_mapview-deselected" width="75" height="50"/>
         <image name="icon_mapview-selected" width="75" height="50"/>
+        <image name="icon_pin" width="24" height="24"/>
+        <image name="icon_refresh" width="24" height="24"/>
         <image name="logo-u" width="62" height="62"/>
     </resources>
 </document>
